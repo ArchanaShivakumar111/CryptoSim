@@ -1,0 +1,505 @@
+.app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 1.75rem 2.5rem;
+}
+
+/* Navbar */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2.5rem;
+  backdrop-filter: blur(18px);
+  background: radial-gradient(circle at top left, rgba(76, 29, 149, 0.7), rgba(15, 23, 42, 0.95));
+  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.8);
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.logo::before {
+  content: '';
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: conic-gradient(from 180deg, #a855f7, #22c55e, #f59e0b, #a855f7);
+  box-shadow: 0 0 18px rgba(168, 85, 247, 0.7);
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  font-size: 0.9rem;
+}
+
+.navbar nav a {
+  color: #e5e7eb;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: transparent;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.navbar nav a:hover {
+  background: rgba(31, 41, 55, 0.9);
+  color: #f9fafb;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-name {
+  font-size: 0.9rem;
+  color: #e5e7eb;
+}
+
+.btn-secondary {
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  padding: 0.45rem 1.1rem;
+  font-size: 0.85rem;
+  box-shadow: none;
+}
+
+.btn-secondary:hover {
+  background: rgba(30, 64, 175, 0.8);
+}
+
+/* Auth pages */
+
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 460px;
+  padding: 2.5rem 2.25rem;
+  border-radius: 1.5rem;
+  background: radial-gradient(circle at top left, rgba(76, 29, 149, 0.9), rgba(15, 23, 42, 0.98));
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.auth-card h1 {
+  margin: 0 0 0.4rem;
+  font-size: 1.6rem;
+}
+
+.auth-subtitle {
+  margin: 0 0 1.6rem;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auth-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+  color: #cbd5f5;
+  gap: 0.4rem;
+}
+
+.auth-switch {
+  margin-top: 1.2rem;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* Dashboard */
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.dashboard-header h2 {
+  margin: 0 0 0.3rem;
+}
+
+.balance-card {
+  padding: 1rem 1.5rem;
+  border-radius: 1.2rem;
+  background: radial-gradient(circle at top, rgba(56, 189, 248, 0.19), rgba(15, 23, 42, 0.95));
+  box-shadow: 0 18px 45px rgba(8, 47, 73, 0.9);
+  border: 1px solid rgba(96, 165, 250, 0.6);
+  min-width: 230px;
+}
+
+.balance-card .label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #9ca3af;
+}
+
+.balance-card .value {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.8fr);
+  grid-template-rows: auto auto auto;
+  gap: 1.25rem;
+}
+
+@media (min-width: 1100px) {
+  .dashboard-grid {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 2.2fr) minmax(0, 1.8fr);
+    grid-auto-rows: auto;
+  }
+
+  .panel-market {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+
+  .panel-trade {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .panel-portfolio-value {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .panel-news {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .panel-wallet {
+    grid-column: 3;
+    grid-row: 2;
+  }
+}
+
+.panel {
+  border-radius: 1.2rem;
+  padding: 1.1rem 1.1rem 1rem;
+  background: radial-gradient(circle at top left, rgba(30, 64, 175, 0.35), rgba(15, 23, 42, 0.98));
+  border: 1px solid rgba(30, 64, 175, 0.7);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+}
+
+.panel h3 {
+  margin: 0 0 0.8rem;
+  font-size: 0.95rem;
+}
+
+.coins-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.coin-card {
+  border-radius: 1rem;
+  padding: 0.75rem 0.9rem;
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.65), rgba(17, 24, 39, 0.98));
+  border: 1px solid rgba(59, 130, 246, 0.6);
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.9);
+}
+
+.coin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.35rem;
+}
+
+.coin-name {
+  font-weight: 600;
+}
+
+.coin-symbol {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #9ca3af;
+}
+
+.coin-price {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.coin-change {
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+}
+
+.coin-change.positive {
+  color: #4ade80;
+}
+
+.coin-change.negative {
+  color: #fb7185;
+}
+
+.coin-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.35rem;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.sparkline-wrapper {
+  margin-top: 0.4rem;
+}
+
+.trade-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.form-row label {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: #cbd5f5;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.pie-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pie-chart-wrapper {
+  width: 100%;
+}
+
+.portfolio-overview {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media (min-width: 900px) {
+  .portfolio-overview {
+    flex-direction: column;
+  }
+}
+
+.portfolio-chart-wrapper {
+  width: 100%;
+}
+
+.portfolio-table-wrapper {
+  max-height: 180px;
+  overflow: auto;
+}
+
+.legend {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+}
+
+.legend-color {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  margin-right: 0.4rem;
+}
+
+.news-panel {
+  max-height: 320px;
+  overflow: hidden;
+}
+
+.news-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.news-item h4 {
+  margin: 0 0 0.15rem;
+  font-size: 0.9rem;
+}
+
+.news-item p {
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+.news-meta {
+  margin-top: 0.35rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+/* Profile page */
+
+.profile {
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(0, 2fr);
+  grid-auto-rows: auto;
+  gap: 1.25rem;
+}
+
+@media (max-width: 900px) {
+  .profile {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.holdings-table,
+.trades-table {
+  margin-top: 0.4rem;
+}
+
+.trades-table tr:nth-child(odd) {
+  background: rgba(15, 23, 42, 0.7);
+}
+
+.trades-table tr:nth-child(even) {
+  background: rgba(15, 23, 42, 0.4);
+}
+
+.trades-table td:first-child {
+  white-space: nowrap;
+}
+
+.buy {
+  color: #4ade80;
+}
+
+.sell {
+  color: #fb7185;
+}
+
+.achievements-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.75rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.6rem;
+}
+
+.achievement {
+  padding: 0.6rem 0.7rem;
+  border-radius: 0.85rem;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px dashed rgba(148, 163, 184, 0.6);
+}
+
+.achievement.unlocked {
+  border-style: solid;
+  border-color: rgba(250, 204, 21, 0.9);
+  box-shadow: 0 0 20px rgba(250, 204, 21, 0.3);
+}
+
+.achievement-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.2rem;
+}
+
+.achievement-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.achievement-status {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #9ca3af;
+}
+
+.achievement.unlocked .achievement-status {
+  color: #facc15;
+}
+
+.achievement-desc {
+  margin: 0;
+  font-size: 0.78rem;
+  color: #9ca3af;
+}
+
+.trade-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  font-size: 0.8rem;
+  color: #e5e7eb;
+}
